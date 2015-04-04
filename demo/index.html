@@ -5,32 +5,53 @@
         <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="scripts/jQuery.mbValidations.js"></script>
         <link rel="stylesheet" type="text/css" href="css/mb-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
     </head>
     <body>
-        <div class="mb-header"></div>
-        <table>
+            <center>
+             <table style="font-size: 1.1em;font-family: Verdana,Arial,sans-serif;padding:1em">
             <tr>
                 <td>
-                    <h3>Enter Number Here :</h3>
+                    <label>Enter Number Here :</label>
                 </td>
                 <td>
-                    <input type="text" id="txtDemoField1" />
+                    <input type="text" id="txtDemoField1" class="text ui-widget-content ui-corner-all" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <h3>Enter Charecters Here :</h3>
+                    <label>Enter Alphabet Here :</label>
                 </td>
                 <td>
-                    <input type="text" id="txtDemoField2" />
+                    <input type="text" id="txtDemoField2" class="text ui-widget-content ui-corner-all" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Enter Number or Alphabet Here :</label>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all"/>
+                </td>
+            </tr>
+                 <tr>
+                <td>
+                    <label>Enter Text Having Length 8 :</label>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all"/>
                 </td>
             </tr>
         </table>
+                </center>
+       
         
          <script type="text/javascript">
              $(document).ready(function () {
                  $("#txtDemoField1").ForceOnlyNumeric();
                  $("#txtDemoField2").ForceOnlyAlpha();
+                 $("#txtDemoField3").ForceOnlyAlphaNumeric();
+                 $("#txtDemoField4").MaxLength(8);
              });
          </script>
     </body>
