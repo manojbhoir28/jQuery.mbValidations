@@ -29,12 +29,7 @@ jQuery.fn.ForceOnlyNumeric = function () {
         });
     });
 }
-function ShowErrorMessage(control, message) {
-    var pos = $(control).offset();
-    var h = $(control).height();
-    var w = $(control).width();
-    $("<div class='custom-error'>" + message + "</div>").appendTo("body").css({ left: pos.left + w + 10, top: pos.top }).fadeOut(3000);
-};
+
 jQuery.fn.ForceOnlyAlpha = function () {
     return this.each(function () {
         $(this).keydown(function (e) {
@@ -49,8 +44,51 @@ jQuery.fn.ForceOnlyAlpha = function () {
                 // Del and Ins
               key == 46 || key == 45)
                 return true;
-            ShowErrorMessage(this, 'Please Enter Charecter\'s Only!</div>');
+            ShowErrorMessage(this, 'Please Enter Alphabet\'s Only!</div>');
             return false;
         });
     });
 }
+
+jQuery.fn.ForceOnlyAlphaNumeric = function () {
+    return this.each(function () {
+        $(this).keydown(function (e) {
+            var key = e.which || e.keyCode;
+            if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+                // numbers   
+              key >= 48 && key <= 57 ||
+                // Numeric keypad
+              key >= 96 && key <= 105 ||
+                //For UpperCase Charecters
+              key >= 65 && key <= 90 ||
+                // For LowerCase Charecters
+              key == 8 || key == 9 || key == 13 ||
+                // left and right arrows
+              key == 37 || key == 39 ||
+                // Del and Ins
+              key == 46 || key == 45)
+                return true;
+            ShowErrorMessage(this, 'Please Enter Numbers or Alphabet\'s Only!</div>');
+            return false;
+        });
+    });
+}
+
+jQuery.fn.MaxLength = function (length) {
+    return this.each(function () {
+        $(this).keydown(function (e) {
+            var key = e.which || e.keyCode;
+            if (key == 8 || $(this).val().length < length)
+                return true;
+            ShowErrorMessage(this, 'Maximum length should be ' + length + '!</div>');
+            return false;
+        });
+    });
+}
+
+function ShowErrorMessage(control, message) {
+    var pos = $(control).offset();
+    var h = $(control).height();
+    var w = $(control).width();
+    $("<div class='custom-error'>" + message + "</div>").appendTo("body").css({ left: pos.left + w + 10, top: pos.top }).fadeOut(3000);
+};
