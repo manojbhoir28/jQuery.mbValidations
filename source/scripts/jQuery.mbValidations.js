@@ -1,5 +1,5 @@
 /*!
-* js-comments <https://github.com/manojbhoir28/jQuery.mbValidations>
+* jQuery.mbValidations <https://github.com/manojbhoir28/jQuery.mbValidations>
 *
 * Copyright (c) 2014-2015, Manoj Bhoir.
 * Licensed under the MIT License.
