@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery.mbValidation Demo</title>
+        <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="scripts/jQuery.mbValidations.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/mb-ui.css"/>
+    </head>
+    <body>
+        <div class="mb-header"></div>
+        <table>
+            <tr>
+                <td>
+                    <h3>Enter Number Here :</h3>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField1" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Enter Charecters Here :</h3>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField2" />
+                </td>
+            </tr>
+        </table>
+        
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $("#txtDemoField1").ForceOnlyNumeric();
+                 $("#txtDemoField2").ForceOnlyAlpha();
+             });
+         </script>
+    </body>
+</html>
