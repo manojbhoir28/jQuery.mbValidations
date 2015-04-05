@@ -1,4 +1,4 @@
-# jQuery.mbValidations - For Easy Validation
+# jQuery.mbValidations - For easy validation
 The jQuery.mbValidation Plugin provides you all basic required validation to make your development and designing process easy.
 ## Getting Started
 ### Including it on your page
