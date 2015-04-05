@@ -17,7 +17,7 @@
                         <label>Enter Number Here :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField1" class="text ui-widget-content ui-corner-all" />
+                        <input type="text" id="txtDemoField1" class="text ui-widget-content ui-corner-all required" />
                     </td>
                 </tr>
                 <tr>
@@ -25,7 +25,7 @@
                         <label>Enter Alphabet Here :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField2" class="text ui-widget-content ui-corner-all" />
+                        <input type="text" id="txtDemoField2" class="text ui-widget-content ui-corner-all required" />
                     </td>
                 </tr>
                 <tr>
@@ -33,7 +33,7 @@
                         <label>Enter Number or Alphabet Here :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all"/>
+                        <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                      <tr>
@@ -41,7 +41,7 @@
                         <label>Enter Text Having Length 8 Here:</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all"/>
+                        <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                 <tr>
@@ -49,7 +49,7 @@
                         <label>Enter Amount Here :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField5"  class="text ui-widget-content ui-corner-all"/>
+                        <input type="text" id="txtDemoField5"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +57,15 @@
                         <label>Enter Email Id Here :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all"/>
+                        <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all required"/>
+                    </td>
+                </tr>
+                     <tr>
+                    <td>
+                        <label>Enter Data For Required Field :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField7"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                  <tr>
@@ -65,7 +73,8 @@
                        
                     </td>
                     <td>
-                        <button id="button">Validate</button>
+                        <button id="btnValidate" type="button" onClick="PerformValidations();">Validate</button>
+                        <button id="btnClear" type="button" onClick="ClearRequiredMark();">Clear</button>
                     </td>
                 </tr>
             </table>
@@ -78,10 +87,10 @@
                  $("#txtDemoField4").MaxLength(8);
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
-
              });
              $(function () {
-                 $("#button").button();
+                 $("#btnValidate").button();
+                 $("#btnClear").button();
              });
          </script>
     </body>
