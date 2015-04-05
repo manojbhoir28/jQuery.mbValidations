@@ -93,7 +93,7 @@
             $(this).keydown(function (e) {
                 var key = e.which || e.keyCode;
                 // backspace
-                if (key == 8 || $(this).val().length < length)
+                if (key == 8 || key == 9|| $(this).val().length < length)
                     return true;
                 ShowErrorMessage(this, 'Maximum length allowed is ' + length + '!</div>');
                 return false;
@@ -146,9 +146,33 @@
             });
         });
     }
-    /*
-    * To display error message if invalid value is entered
-    */
+
+    PerformValidations = function () {
+        var all = $(".required").map(function () {
+            return $(this).attr('id');
+        }).get();
+        jQuery.each(all, function (index, value) {
+            if (!$('#' + this + '').val()) {
+                $('#' + this + '').val('');
+                $('#' + this + '').prop('required', true);;
+            }
+        });
+    };
+
+
+    ClearRequiredMark = function () {
+        var all = $(".required").map(function () {
+            return $(this).attr('id');
+        }).get();
+        jQuery.each(all, function (index, value) {
+            $('#' + this + '').val('');
+            $('#' + this + '').prop('required', false);;
+        });
+    }
+
+   /*
+   * To display error message if invalid value is entered
+   */
     function ShowErrorMessage(control, message) {
         var pos = $(control).offset();
         var h = $(control).height();
