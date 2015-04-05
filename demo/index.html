@@ -60,12 +60,20 @@
                         <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <label>Enter Contact Number Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField7"  class="text ui-widget-content ui-corner-all required"/>
+                    </td>
+                </tr>
                      <tr>
                     <td>
                         <label>Enter Data For Required Field :</label>
                     </td>
                     <td>
-                        <input type="text" id="txtDemoField7"  class="text ui-widget-content ui-corner-all required"/>
+                        <input type="text" id="txtDemoField8"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                  <tr>
@@ -87,6 +95,7 @@
                  $("#txtDemoField4").MaxLength(8);
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
+                 $("#txtDemoField7").ForceContactNumber();
              });
              $(function () {
                  $("#btnValidate").button();
