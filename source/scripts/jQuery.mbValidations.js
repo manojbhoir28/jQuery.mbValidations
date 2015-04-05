@@ -93,7 +93,7 @@
             $(this).keydown(function (e) {
                 var key = e.which || e.keyCode;
                 // backspace
-                if (key == 8 || key == 9|| $(this).val().length < length)
+                if (key == 8 || key == 9 || $(this).val().length < length)
                     return true;
                 ShowErrorMessage(this, 'Maximum length allowed is ' + length + '!</div>');
                 return false;
@@ -161,7 +161,40 @@
             });
         });
     }
-
+    /*
+    * To validate Contact Number
+    */
+    $.fn.ForceContactNumber = function () {
+        return this.each(function () {
+            $(this).keydown(function (e) {
+                var key = e.which || e.keyCode;
+                //alert(e.shiftKey && key == 61);
+                // backspace
+                if ((!e.shiftKey && !e.altKey && !e.ctrlKey && 
+                    // numbers   
+                   key >= 48 && key <= 57 ||
+                    // Numeric keypad
+                   key >= 96 && key <= 105 ||
+                    // comma, period and minus, . on keypad
+                   key == 109 || key == 173 || key == 107 || key == 61 || 
+                    // Home and End
+                   key == 35 || key == 36 ||
+                    // left and right arrows
+                   key == 37 || key == 39 ||
+                    // Del and Ins
+                   key == 46 || key == 45 || key == 8 || key == 9) 
+                    && ($(this).val().length < 15) ||
+                    // Backspace and Tab and Enter
+                    key == 8 || key == 9 || key == 13)
+                    return true;
+                ShowErrorMessage(this, 'Please Enter Valid Contact Number!</div>');
+                return false;
+            });
+        });
+    }
+    /*
+    *Validate Required Fields
+    */
     PerformValidations = function () {
         var all = $(".required").map(function () {
             return $(this).attr('id');
@@ -174,8 +207,9 @@
             }
         });
     };
-
-
+    /*
+    *Clear All Fields and Clear Required Field Validation Marking
+    */
     ClearRequiredMark = function () {
         var all = $(".required").map(function () {
             return $(this).attr('id');
@@ -185,10 +219,9 @@
             $('#' + this + '').prop('required', false);;
         });
     }
-
-   /*
-   * To display error message if invalid value is entered
-   */
+    /*
+    * To display error message if invalid value is entered
+    */
     function ShowErrorMessage(control, message) {
         var pos = $(control).offset();
         var h = $(control).height();
