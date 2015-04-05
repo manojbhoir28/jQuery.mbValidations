@@ -104,12 +104,13 @@
     * To allow only Numbers wih decimal ex.(100.0)
     */
     $.fn.ForceAmount = function () {
+        $(this).css("text-align", "right");
         return this.each(function () {
             $(this).keydown(function (e) {
                 var key = e.which || e.keyCode;
-                if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+                if (!e.shiftKey && !e.altKey && !e.ctrlKey && !($(this).val().split(".").length > 1 && (key == 110 || key == 190)) &&
                     // numbers   
-                    key >= 48 && key <= 57 ||
+                   (key >= 48 && key <= 57 ||
                     // Numeric keypad
                     key >= 96 && key <= 105 ||
                     // comma, period and minus, . on keypad
@@ -123,12 +124,26 @@
                     // decimal
                    key == 110 || key == 190 ||
                     // Del and Ins
-                   key == 46 || key == 45)
+                   key == 46 || key == 45)) 
                     return true;
-                ShowErrorMessage(this, 'Please Enter Number\'s Only!');
+                ShowErrorMessage(this, 'Please Enter Valid Amount!');
                 return false;
             });
-
+            $(this).keyup(function (e) {
+                if ($(this).val().indexOf('.') != -1) {
+                    if ($(this).val().split(".")[1].length > 1) {
+                        if (isNaN(parseFloat(this.value))) return;
+                        this.value = parseFloat(this.value).toFixed(2);
+                    }
+                }
+            });
+            $(this).focusout(function () {
+                if ($(this).val().substr(-1) === ".") 
+                    $(this).val(($(this).val().slice(0, -1)));
+                if($(this).val().substr(-3) === ".00")
+                    $(this).val(($(this).val().slice(0, -3)));
+                return true;
+            });
         });
     }
     /*
@@ -140,7 +155,7 @@
                 var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                 if ($(this).val().length == 0 || regex.test($(this).val()))
                     return true;
-                ShowErrorMessage(this, 'Invalid Email Id.Please Enter Valid Email!</div>');
+                ShowErrorMessage(this, 'Invalid Email Id! Please Enter Valid Email.</div>');
                 $(this).val('')
                 return false;
             });
@@ -154,7 +169,8 @@
         jQuery.each(all, function (index, value) {
             if (!$('#' + this + '').val()) {
                 $('#' + this + '').val('');
-                $('#' + this + '').prop('required', true);;
+                $('#' + this + '').prop('required', true);
+                ShowErrorMessage($('#' + this + ''), 'Required Field!');
             }
         });
     };
