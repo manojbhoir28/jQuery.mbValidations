@@ -42,8 +42,32 @@
                     <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all"/>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label>Enter Amount :</label>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField5"  class="text ui-widget-content ui-corner-all"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Enter Email Id :</label>
+                </td>
+                <td>
+                    <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all"/>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <button onclick="Show()">Click</button>
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
         </table>
-                </center>
+    </center>
        
         
          <script type="text/javascript">
@@ -52,6 +76,8 @@
                  $("#txtDemoField2").ForceOnlyAlpha();
                  $("#txtDemoField3").ForceOnlyAlphaNumeric();
                  $("#txtDemoField4").MaxLength(8);
+                 $("#txtDemoField5").ForceAmount();
+                 $("#txtDemoField6").ForceEmail();
              });
          </script>
     </body>
