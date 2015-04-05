@@ -3,73 +3,73 @@
     <head>
         <title>jQuery.mbValidation Demo</title>
         <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="scripts/jquery-ui.js"></script>
         <script type="text/javascript" src="scripts/jQuery.mbValidations.js"></script>
         <link rel="stylesheet" type="text/css" href="css/mb-ui.css"/>
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
     </head>
     <body>
-            <center>
-             <table style="font-size: 1.1em;font-family: Verdana,Arial,sans-serif;padding:1em">
-            <tr>
-                <td>
-                    <label>Enter Number Here :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField1" class="text ui-widget-content ui-corner-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Enter Alphabet Here :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField2" class="text ui-widget-content ui-corner-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Enter Number or Alphabet Here :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all"/>
-                </td>
-            </tr>
+        <center>
+            <h2>jQuery.mbValidation Plugin Demo</h2>
+                 <table style="font-size: 1.1em;font-family: Verdana,Arial,sans-serif;padding:1em">
+                <tr>
+                    <td>
+                        <label>Enter Number Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField1" class="text ui-widget-content ui-corner-all" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Alphabet Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField2" class="text ui-widget-content ui-corner-all" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Number or Alphabet Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all"/>
+                    </td>
+                </tr>
+                     <tr>
+                    <td>
+                        <label>Enter Text Having Length 8 Here:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Amount Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField5"  class="text ui-widget-content ui-corner-all"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Email Id Here :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all"/>
+                    </td>
+                </tr>
                  <tr>
-                <td>
-                    <label>Enter Text Having Length 8 :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Enter Amount :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField5"  class="text ui-widget-content ui-corner-all"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Enter Email Id :</label>
-                </td>
-                <td>
-                    <input type="text" id="txtDemoField6"  class="text ui-widget-content ui-corner-all"/>
-                </td>
-            </tr>
-             <tr>
-                <td>
-                    <button onclick="Show()">Click</button>
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table>
-    </center>
-       
-        
+                    <td>
+                       
+                    </td>
+                    <td>
+                        <button id="button">Validate</button>
+                    </td>
+                </tr>
+            </table>
+        </center>
          <script type="text/javascript">
              $(document).ready(function () {
                  $("#txtDemoField1").ForceOnlyNumeric();
@@ -78,6 +78,10 @@
                  $("#txtDemoField4").MaxLength(8);
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
+
+             });
+             $(function () {
+                 $("#button").button();
              });
          </script>
     </body>
