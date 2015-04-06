@@ -8,7 +8,7 @@ Include jQuery and jQuery.mbValidation plugin on a page.
 ```html
 <script src="jquery.js"></script>
 <script src="jQuery.mbValidations.js"></script>
-<link rel="stylesheet" type="text/css" href="css/mb-ui.css"/>
+<link rel="stylesheet" type="text/css" href="mb-ui.css"/>
 ```
 How to use jQuery.mbValidations with your application?
 ```js
