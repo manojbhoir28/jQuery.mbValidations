@@ -3,3 +3,5 @@ node_js:
 - 0.10
 install:
 - npm install express
+script:
+  - echo "Hello World"
