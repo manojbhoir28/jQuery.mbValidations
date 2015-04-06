@@ -1,4 +1,6 @@
 # jQuery.mbValidations - For easy validation
+[![Build Status](https://travis-ci.org/manojbhoir28/jQuery.mbValidations.png)](https://travis-ci.org/manojbhoir28/jQuery.mbValidations.png)
+
 The jQuery.mbValidation Plugin provides you all basic required validation to make your development process easy.
 ##Demo
 Click here for [jQuery.mbValidation Demo](https://manojbhoir28.github.io/jQuery.mbValidations/demo/index.html)
