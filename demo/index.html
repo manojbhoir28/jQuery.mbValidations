@@ -36,12 +36,20 @@
                         <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
-                     <tr>
+                <tr>
                     <td>
                         <label>Enter Text Having Length 8 Here:</label>
                     </td>
                     <td>
                         <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all required"/>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Enter Text With Minimum Length 3 Here:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField9"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                 <tr>
@@ -96,6 +104,7 @@
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
                  $("#txtDemoField7").ForceContactNumber();
+				 $("#txtDemoField9").MinLength(3);
              });
              $(function () {
                  $("#btnValidate").button();
