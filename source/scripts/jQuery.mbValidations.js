@@ -107,9 +107,10 @@
     $.fn.MinLength = function (length) {
         return this.each(function () {
             $(this).focusout(function () {
-                if ($(this).val().length > length)
+                if ($(this).val().length == 0 || $(this).val().length >= length)
                     return true;
                 ShowErrorMessage(this, 'Minimum length required is ' + length + '!</div>');
+				$(this).val('')
                 return false;
             });
         });
