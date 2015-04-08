@@ -4,13 +4,13 @@
         <title>jQuery.mbValidation Demo</title>
         <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="scripts/jquery-ui.js"></script>
-        <script type="text/javascript" src="scripts/jQuery.mbValidations.js"></script>
+        <script type="text/javascript" src="scripts/jQuery.mbValidations.js" />
         <link rel="stylesheet" type="text/css" href="css/mb-ui.css"/>
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
     </head>
     <body>
         <center>
-            <h2>jQuery.mbValidation Plugin Demo</h2>
+            <h2>jQuery.mbValidation Plugin Demo 1.0</h2>
                  <table style="font-size: 1.1em;font-family: Verdana,Arial,sans-serif;padding:1em">
                 <tr>
                     <td>
@@ -36,12 +36,20 @@
                         <input type="text" id="txtDemoField3"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
-                     <tr>
+                <tr>
                     <td>
                         <label>Enter Text Having Length 8 Here:</label>
                     </td>
                     <td>
                         <input type="text" id="txtDemoField4"  class="text ui-widget-content ui-corner-all required"/>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Enter Text With Minimum Length 3 Here:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField9"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
                 <tr>
@@ -96,6 +104,7 @@
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
                  $("#txtDemoField7").ForceContactNumber();
+				 $("#txtDemoField9").MinLength(3);
              });
              $(function () {
                  $("#btnValidate").button();
