@@ -100,6 +100,20 @@
             });
         });
     }
+	/*
+    * Validate input data for minimum length defined by user
+    * @param length - Minimum length allowed
+    */
+    $.fn.MinLength = function (length) {
+        return this.each(function () {
+            $(this).focusout(function () {
+                if ($(this).val().length > length)
+                    return true;
+                ShowErrorMessage(this, 'Minimum length required is ' + length + '!</div>');
+                return false;
+            });
+        });
+    }
     /*
     * To allow only Numbers wih decimal ex.(100.0)
     */
