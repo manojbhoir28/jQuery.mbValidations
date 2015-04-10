@@ -84,6 +84,14 @@
                         <input type="text" id="txtDemoField8"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
+				 <tr>
+                    <td>
+                        <label>Enter URL :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="txtDemoField10"  class="text ui-widget-content ui-corner-all required"/>
+                    </td>
+                </tr>
                  <tr>
                     <td>
                        
@@ -105,6 +113,7 @@
                  $("#txtDemoField6").ForceEmail();
                  $("#txtDemoField7").ForceContactNumber();
 				 $("#txtDemoField9").MinLength(3);
+				 $("#txtDemoField10").ForceURL();
              });
              $(function () {
                  $("#btnValidate").button();
