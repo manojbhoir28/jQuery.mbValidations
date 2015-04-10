@@ -116,6 +116,20 @@
         });
     }
     /*
+     * To validate URL
+     */
+     $.fn.ForceURL = function () {
+        return this.each(function () {
+            $(this).focusout(function () {
+                if ($(this).val().length == 0 || $(this).val().match("^http://"))
+                    return true;
+                ShowErrorMessage(this, 'Invalid URL! Please Enter Valid URL.</div>');
+                $(this).val('')
+                return false;
+            });
+        });
+    }
+    /*
     * To allow only Numbers wih decimal ex.(100.0)
     */
     $.fn.ForceAmount = function () {
@@ -185,6 +199,20 @@
                 if ($(this).val().length == 0 || regex.test($(this).val()))
                     return true;
                 ShowErrorMessage(this, 'Invalid Email Id! Please Enter Valid Email.</div>');
+                $(this).val('')
+                return false;
+            });
+        });
+    }
+	/*
+	* To validate URL
+	*/
+	$.fn.ForceURL = function () {
+        return this.each(function () {
+            $(this).focusout(function () {
+                if ($(this).val().length == 0 || $(this).val().match("^http://"))
+                    return true;
+                ShowErrorMessage(this, 'Invalid URL! Please Enter Valid URL.</div>');
                 $(this).val('')
                 return false;
             });
