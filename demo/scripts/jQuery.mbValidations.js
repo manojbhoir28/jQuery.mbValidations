@@ -162,6 +162,20 @@
         });
     }
     /*
+	* To validate URL
+	*/
+	$.fn.ForceURL = function () {
+        return this.each(function () {
+            $(this).focusout(function () {
+                if ($(this).val().length == 0 || $(this).val().match("^http://"))
+                    return true;
+                ShowErrorMessage(this, 'Invalid URL! Please Enter Valid URL.</div>');
+                $(this).val('')
+                return false;
+            });
+        });
+    }
+    /*
     * To validate Email Address
     */
     $.fn.ForceEmail = function () {
