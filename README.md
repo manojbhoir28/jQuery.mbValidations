@@ -31,6 +31,8 @@ $(document).ready(function () {
    $("#txtDemoField7").ForceContactNumber();
    // Data with specific length required
    $("#txtDemoField8").MinLength(3);
+    // To allow valid URL
+   $("#txtDemoField9").ForceURL();
 });
 ```
 For required field validation specify class="required" for input and call PerformValidations() on button onClick event.
