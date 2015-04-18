@@ -92,6 +92,11 @@
                         <input type="text" id="txtDemoField10"  class="text ui-widget-content ui-corner-all required"/>
                     </td>
                 </tr>
+				<tr>
+                    <td style="text-align:center">
+                        <input type="checkbox" id="txtDemoField11" name="accept" value="accept" class="required">I Agree
+                    </td>
+                </tr>
                  <tr>
                     <td>
                        
@@ -112,12 +117,12 @@
                  $("#txtDemoField5").ForceAmount();
                  $("#txtDemoField6").ForceEmail();
                  $("#txtDemoField7").ForceContactNumber();
-		 $("#txtDemoField9").MinLength(3);
-		 $("#txtDemoField10").ForceURL();
+				 $("#txtDemoField9").MinLength(3);
+				 $("#txtDemoField10").ForceURL();
              });
              $(function () {
-             $("#btnValidate").button();
-             $("#btnClear").button();
+                 $("#btnValidate").button();
+                 $("#btnClear").button();
              });
          </script>
     </body>

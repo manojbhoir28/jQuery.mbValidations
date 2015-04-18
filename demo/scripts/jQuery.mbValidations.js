@@ -176,20 +176,6 @@
         });
     }
     /*
-	* To validate URL
-	*/
-	$.fn.ForceURL = function () {
-        return this.each(function () {
-            $(this).focusout(function () {
-                if ($(this).val().length == 0 || $(this).val().match("^http://"))
-                    return true;
-                ShowErrorMessage(this, 'Invalid URL! Please Enter Valid URL.</div>');
-                $(this).val('')
-                return false;
-            });
-        });
-    }
-    /*
     * To validate Email Address
     */
     $.fn.ForceEmail = function () {
@@ -256,11 +242,18 @@
         var all = $(".required").map(function () {
             return $(this).attr('id');
         }).get();
+       
         jQuery.each(all, function (index, value) {
             if (!$('#' + this + '').val()) {
                 $('#' + this + '').val('');
                 $('#' + this + '').prop('required', true);
                 ShowErrorMessage($('#' + this + ''), 'Required Field!');
+            }
+            if ($('#' + this + '').is(':checkbox')) {
+                if (!$('#' + this + '').prop('checked')) {
+                    ShowErrorMessage($('#' + this + ''), 'Please Select Required Field!');
+                }
+                
             }
         });
     };
@@ -283,7 +276,12 @@
         var pos = $(control).offset();
         var h = $(control).height();
         var w = $(control).width();
-        $("<div class='custom-error'>" + message + "</div>").appendTo("body").css({ left: pos.left + w + 10, top: pos.top }).fadeOut(3000);
+        if ($(control).is(':checkbox')) {
+            $("<div class='custom-error'>" + message + "</div>").appendTo("body").css({ left: pos.left, top: pos.top + h + 10 }).fadeOut(3000);
+        }
+        else {
+            $("<div class='custom-error'>" + message + "</div>").appendTo("body").css({ left: pos.left + w + 10, top: pos.top }).fadeOut(3000);
+        }
     };
 
 })(jQuery);
